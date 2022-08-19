@@ -1,0 +1,140 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local ScreenGui = Instance.new("ScreenGui")
+local main = Instance.new("Frame")
+local label = Instance.new("TextLabel")
+local script1 = Instance.new("TextButton")
+local script2 = Instance.new("TextButton")
+local script4 = Instance.new("TextButton")
+local script3 = Instance.new("TextButton")
+local cmdx = Instance.new("TextButton")
+local infy = Instance.new("TextButton")
+local vgh = Instance.new("TextButton")
+
+--Properties:
+
+ScreenGui.Parent = game.CoreGui
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+main.Name = "main"
+main.Parent = ScreenGui
+main.BackgroundColor3 = Color3.fromRGB(49, 49, 49)
+main.Position = UDim2.new(0.206174195, 0, 0.144897953, 0)
+main.Size = UDim2.new(0, 472, 0, 258)
+main.Active = true
+main.Draggable = true
+
+label.Name = "label"
+label.Parent = main
+label.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
+label.Size = UDim2.new(0, 472, 0, 49)
+label.Font = Enum.Font.SciFi
+label.Text = "Premium Sploit"
+label.TextColor3 = Color3.fromRGB(232, 232, 232)
+label.TextSize = 14.000
+
+script1.Name = "script1"
+script1.Parent = main
+script1.BackgroundColor3 = Color3.fromRGB(98, 98, 98)
+script1.Position = UDim2.new(0.0338983089, 0, 0.267441869, 0)
+script1.Size = UDim2.new(0, 179, 0, 34)
+script1.Font = Enum.Font.Roboto
+script1.Text = "Combat Warriors"
+script1.TextColor3 = Color3.fromRGB(217, 217, 217)
+script1.TextSize = 14.000
+script1.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet("https://cheeseskid.tk/shit/combat_warriors.lua",true))()
+	-- Goofy Ahh Script / Hydra Hub v2
+	print("Loaded Combat Warriors")
+	wait(5)
+
+	loadstring(game:HttpGet("https://projecthook.xyz/scripts/free.lua"))()
+	-- Project Hook
+end)
+
+script2.Name = "script2"
+script2.Parent = main
+script2.BackgroundColor3 = Color3.fromRGB(98, 98, 98)
+script2.Position = UDim2.new(0.584745765, 0, 0.267441869, 0)
+script2.Size = UDim2.new(0, 179, 0, 34)
+script2.Font = Enum.Font.Roboto
+script2.Text = "Lucky Block"
+script2.TextColor3 = Color3.fromRGB(217, 217, 217)
+script2.TextSize = 14.000
+script2.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet(('https://raw.githubusercontent.com/stillnotgivingafuck/LuckyBlocks/main/loader.lua')))()
+	print("Loaded Lucky Block")
+end)
+
+script4.Name = "script4"
+script4.Parent = main
+script4.BackgroundColor3 = Color3.fromRGB(98, 98, 98)
+script4.Position = UDim2.new(0.584745765, 0, 0.434108555, 0)
+script4.Size = UDim2.new(0, 179, 0, 34)
+script4.Font = Enum.Font.Roboto
+script4.Text = "Arsenal(key)"
+script4.TextColor3 = Color3.fromRGB(217, 217, 217)
+script4.TextSize = 14.000
+script4.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/RandomAdamYT/DarkHub/master/Init',true))()
+	print("Loaded Arsenal")
+end)
+
+script3.Name = "script3"
+script3.Parent = main
+script3.BackgroundColor3 = Color3.fromRGB(98, 98, 98)
+script3.Position = UDim2.new(0.0338983089, 0, 0.434108555, 0)
+script3.Size = UDim2.new(0, 179, 0, 34)
+script3.Font = Enum.Font.Roboto
+script3.Text = "A Universal Time"
+script3.TextColor3 = Color3.fromRGB(217, 217, 217)
+script3.TextSize = 14.000
+script3.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/ewyzu/ewyzu-scripts/main/ewyzu-AUT"))()
+	
+		wait(5)	
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/MXS-Scripts/mxs-free/main/AUT.lua", true))()
+ print("Loaded AUT")
+end)
+
+cmdx.Name = "cmdx"
+cmdx.Parent = main
+cmdx.BackgroundColor3 = Color3.fromRGB(98, 98, 98)
+cmdx.Position = UDim2.new(0.101694912, 0, 0.895348847, 0)
+cmdx.Size = UDim2.new(0, 115, 0, 20)
+cmdx.Font = Enum.Font.Roboto
+cmdx.Text = "CMD-X"
+cmdx.TextColor3 = Color3.fromRGB(217, 217, 217)
+cmdx.TextSize = 14.000
+cmdx.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/CMD-X/CMD-X/master/Source", true))()
+end)
+
+infy.Name = "infy"
+infy.Parent = main
+infy.BackgroundColor3 = Color3.fromRGB(98, 98, 98)
+infy.Position = UDim2.new(0.379237294, 0, 0.895348847, 0)
+infy.Size = UDim2.new(0, 115, 0, 20)
+infy.Font = Enum.Font.Roboto
+infy.Text = "İnfinite Yield"
+infy.TextColor3 = Color3.fromRGB(217, 217, 217)
+infy.TextSize = 14.000
+infy.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet("https://cdn.wearedevs.net/scripts/Infinite%20Yield.txt"))()
+end)
+
+vgh.Name = "vgh"
+vgh.Parent = main
+vgh.BackgroundColor3 = Color3.fromRGB(98, 98, 98)
+vgh.Position = UDim2.new(0.652542353, 0, 0.895348847, 0)
+vgh.Size = UDim2.new(0, 115, 0, 20)
+vgh.Font = Enum.Font.Roboto
+vgh.Text = "V.G Hub"
+vgh.TextColor3 = Color3.fromRGB(217, 217, 217)
+vgh.TextSize = 14.000
+vgh.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/1201for/V.G-Hub/main/V.Ghub'))()
+end)
