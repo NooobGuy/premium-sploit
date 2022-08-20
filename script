@@ -1,5 +1,5 @@
 -- Premium Sploit
--- Version: 0.2
+-- Version: 1.0
 
 -- Instances:
 
@@ -13,6 +13,8 @@ local script3 = Instance.new("TextButton")
 local cmdx = Instance.new("TextButton")
 local infy = Instance.new("TextButton")
 local vgh = Instance.new("TextButton")
+local menu2 = Instance.new("TextButton")
+local script5 = Instance.new("TextButton")
 
 --Properties:
 
@@ -94,10 +96,10 @@ script3.TextColor3 = Color3.fromRGB(217, 217, 217)
 script3.TextSize = 14.000
 script3.MouseButton1Down:connect(function()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/ewyzu/ewyzu-scripts/main/ewyzu-AUT"))()
-	
-		wait(5)	
+
+	wait(5)	
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/MXS-Scripts/mxs-free/main/AUT.lua", true))()
- print("Loaded AUT")
+	print("Loaded AUT")
 end)
 
 cmdx.Name = "cmdx"
@@ -139,4 +141,158 @@ vgh.MouseButton1Down:connect(function()
 	loadstring(game:HttpGet('https://raw.githubusercontent.com/1201for/V.G-Hub/main/V.Ghub'))()
 end)
 
--- Script made by Wumpus
+menu2.Name = "menu2"
+menu2.Parent = main
+menu2.BackgroundColor3 = Color3.fromRGB(98, 98, 98)
+menu2.Position = UDim2.new(0.584745765, 0, 0.608527184, 0)
+menu2.Size = UDim2.new(0, 179, 0, 34)
+menu2.Font = Enum.Font.Roboto
+menu2.Text = "Menu 2"
+menu2.TextColor3 = Color3.fromRGB(217, 217, 217)
+menu2.TextSize = 14.000
+menu2.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/NooobGuy/premium-sploit/main/menu2'))()
+	
+end)
+
+script5.Name = "script5"
+script5.Parent = main
+script5.BackgroundColor3 = Color3.fromRGB(98, 98, 98)
+script5.Position = UDim2.new(0.0338983089, 0, 0.608527184, 0)
+script5.Size = UDim2.new(0, 179, 0, 34)
+script5.Font = Enum.Font.Roboto
+script5.Text = "Evade(key)"
+script5.TextColor3 = Color3.fromRGB(217, 217, 217)
+script5.TextSize = 14.000
+script5.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/LOLking123456/EVade/main/Evade5"))()
+	
+	wait(5)
+	
+	local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+	local Window = OrionLib:MakeWindow({Name = "Premium Sploit | Orion Library", HidePremium = true, SaveConfig = true, ConfigFolder = "OrionTest"})
+	-- auto jump works and if u says it doesnt u just dont know how to bhop sorry? also you have to jump first to enable the bhop thing
+	local Tab = Window:MakeTab({
+		Name =  "esp options",
+		Icon = "rbxassetid://4483345998",
+		PremiumOnly = false
+	})
+
+	Tab:AddToggle({
+		Name = "esp toggle",
+		Default = true,
+		Callback = function(Value)
+			getgenv().toggleespmpt = Value
+		end    
+	})
+
+	Tab:AddColorpicker({
+		Name = "Esp colour",
+		Default = Color3.fromRGB(225, 0, 0),
+		Callback = function(Value)
+			getgenv().mptespcolour = Value
+		end  
+	})
+
+	Tab:AddSlider({
+		Name = "esp max distance",
+		Min = 1,
+		Max = 100000,
+		Default = 100000,
+		Color = Color3.fromRGB(72, 216, 0),
+		Increment = 250,
+		ValueName = "studs",
+		Callback = function(Value)
+			getgenv().mptespdistance = Value
+		end    
+	})
+
+	Tab:AddSlider({
+		Name = "esp thickness",
+		Min = 1,
+		Max = 30,
+		Default = 2,
+		Color = Color3.fromRGB(72, 216, 0),
+		Increment = 1,
+		ValueName = "thickness",
+		Callback = function(Value)
+			getgenv().mptespthickness = Value
+		end    
+	})
+
+	local Tab1 = Window:MakeTab({
+		Name =  "Auto Jump",
+		Icon = "rbxassetid://4483345998",
+		PremiumOnly = true
+	})
+	getgenv().autojumpmpt = false
+	function autojump()
+		local plr = game:GetService'Players'.LocalPlayer
+		repeat wait() until plr.Character ~= nil
+		plr.Character:WaitForChild'Humanoid'.StateChanged:Connect(function(old,new)
+			if new == Enum.HumanoidStateType.Landed and autojumpmpt then
+				plr.Character:WaitForChild'Humanoid':ChangeState("Jumping")
+			end
+		end)
+	end
+	autojump()
+	game:GetService'Players'.LocalPlayer.CharacterAdded:Connect(autojump)
+	Tab1:AddBind({
+		Name = "toggle auto jump",
+		Default = Enum.KeyCode.K,
+		Hold = false,
+		Callback = function()
+			if getgenv().autojumpmpt == true then
+				getgenv().autojumpmpt = false
+			else
+				getgenv().autojumpmpt = true
+			end
+		end    
+	})
+
+	local cam = workspace.CurrentCamera
+	local rs = game:GetService'RunService'
+
+	getgenv().toggleespmpt = true
+	getgenv().Thickmpt = 2
+	function esp(plr)
+		if game:GetService'Players':GetPlayerFromCharacter(plr) == nil then
+			local rat = Drawing.new("Line")
+			rs.RenderStepped:Connect(function()
+				if plr:FindFirstChild'HumanoidRootPart' then
+					local vector,screen = cam:WorldToViewportPoint(plr.HumanoidRootPart.Position)
+					if screen then
+						rat.Visible = toggleespmpt
+						rat.Thickness = Thickmpt
+						rat.From = Vector2.new(cam.ViewportSize.X / 2,cam.ViewportSize.Y / 1)
+						rat.To = Vector2.new(vector.X,vector.Y)
+						rat.Color = getgenv().mptespcolour
+						rat.Thickness = getgenv().mptespthickness
+					else
+						rat.Visible = false
+					end
+				else
+					pcall(function()
+						rat.Visible = false
+					end)
+				end
+				if not plr:FindFirstChild'HumanoidRootPart' or not plr:FindFirstChild'HumanoidRootPart':IsDescendantOf(game:GetService'Workspace') then
+					pcall(function()
+						rat:Remove()
+					end)
+				end
+			end)
+		end
+	end
+
+	for i,v in pairs(game:GetService'Workspace'.Game.Players:GetChildren()) do
+		esp(v)
+
+	end
+	game:GetService'Workspace'.Game.Players.ChildAdded:Connect(function(plr)
+		esp(plr)
+	end)
+	
+	print("Loaded Evade")
+
+end)
