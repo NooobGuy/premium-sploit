@@ -51,10 +51,6 @@ script1.MouseButton1Down:connect(function()
 	loadstring(game:HttpGet("https://cheeseskid.tk/shit/combat_warriors.lua",true))()
 	-- Goofy Ahh Script / Hydra Hub v2
 	print("Loaded Combat Warriors")
-	wait(5)
-
-	loadstring(game:HttpGet("https://projecthook.xyz/scripts/free.lua"))()
-	-- Project Hook
 end)
 
 script2.Name = "script2"
